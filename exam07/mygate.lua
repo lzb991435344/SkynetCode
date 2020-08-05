@@ -50,3 +50,62 @@ function handler.error(fd, msg)
 end
 
 gateserver.start(handler)
+
+--[[
+--server   ./skynet ../skynetCode/exam07/config
+
+
+[:01000002] LAUNCH snlua bootstrap
+[:01000003] LAUNCH snlua launcher
+[:01000004] LAUNCH snlua cmaster
+[:01000004] master listen socket 0.0.0.0:2013
+[:01000005] LAUNCH snlua cslave
+[:01000005] slave connect to master 127.0.0.1:2013
+[:01000004] connect from 127.0.0.1:60058 4
+[:01000006] LAUNCH harbor 1 16777221
+[:01000004] Harbor 1 (fd=4) report 127.0.0.1:2526
+[:01000005] Waiting for 0 harbors
+[:01000005] Shakehand ready
+[:01000007] LAUNCH snlua datacenterd
+[:01000008] LAUNCH snlua service_mgr
+[:01000009] LAUNCH snlua main
+======Server start=======
+[:0100000a] LAUNCH snlua socket1
+==========Socket Start=========
+Listen socket : 127.0.0.1   8888
+[:0100000b] LAUNCH snlua mygate
+[:0100000b] Listen on 127.0.0.1:8888
+[:01000009] KILL self
+[:01000002] KILL self
+===========gate handler.connect============
+[:0100000c] LAUNCH snlua service1
+==========Service1 Start=========
+==========Service1 dispatch============start
+service1 CMD.start
+===========gate handler.message============6
+接收到客户端消息,传给agent服务处理
+===========gate handler.message============6
+接收到客户端消息,传给agent服务处理
+===========gate handler.message============6
+接收到客户端消息,传给agent服务处理
+===========gate handler.message============6
+接收到客户端消息,传给agent服务处理
+===========gate handler.message============6
+接收到客户端消息,传给agent服务处理
+
+
+
+--client  ./3rd/lua/lua  ../skynetCode/exam07/client1.lua 
+
+Request:    1
+Request:    2
+i lonr w
+Request:    3
+i am yu ^H^Hou 
+Request:    4
+11111111
+Request:    5
+
+
+
+--]]
