@@ -259,6 +259,8 @@ function MSG.data(fd, msg, sz)
 	-- recv a package, forward it
 	local c = connection[fd]
 	local agent = c.agent
+
+	--无agent
 	if agent == nil then
 		agent = watchdog
 	end
